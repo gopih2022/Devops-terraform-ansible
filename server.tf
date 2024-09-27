@@ -12,6 +12,7 @@ region = "us-east-1"
 }
 resource "aws_instance" "gopi-cicd-server" {
   ami = "ami-0e54eba7c51c234f6"
+  vpc_security_group_ids  = [aws_security_group.allow_ssh.id]
   instance_type = "t2.micro"
   key_name = "gopi-import"
 
