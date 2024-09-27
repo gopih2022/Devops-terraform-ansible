@@ -16,7 +16,7 @@ resource "aws_instance" "gopi-cicd-server" {
   key_name = "gopi-import"
 
   tags = {
-    Name = "raman-DevOps-batch-server"
+    Name = "gopi-DevOps-batch-server"
     env = "Production"
     owner = "Raman"
   }
