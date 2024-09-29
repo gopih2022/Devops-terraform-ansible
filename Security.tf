@@ -1,7 +1,7 @@
-resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh"
+resource "aws_security_group" "gopi-sg" {
+  name        = "gopi-sg"
   description = "Allow SSH inbound traffic"
-  vpc_id      = "vpc-09db8688d039eb48a"
+  vpc_id      = "vpc-0f0af5688061fce48 "
 
   ingress {
     description = "SSH into VPC"
