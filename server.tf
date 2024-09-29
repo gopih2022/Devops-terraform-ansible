@@ -12,7 +12,7 @@ region = "us-east-1"
 }
 resource "aws_instance" "myserver" {
   ami = "ami-0e86e20dae9224db8"
-  vpc_security_group_ids  = "sg-0a628e9cba5f160e0"
+  vpc_security_group_ids  = [aws_security_group.allow_ssh.id]
   instance_type = "t2.micro"
   key_name = "gopi-role"
 
