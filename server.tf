@@ -10,16 +10,16 @@ terraform {
 provider "aws" {
 region = "us-east-1"
 }
-resource "aws_instance" "gopi-cicd-server" {
-  ami = "ami-0e54eba7c51c234f6"
-  vpc_security_group_ids  = [aws_security_group.allow_ssh.id]
+resource "aws_instance" "myserver" {
+  ami = "ami-0e86e20dae9224db8"
+  vpc_security_group_ids  = ""sg-0a628e9cba5f160e0
   instance_type = "t2.micro"
-  key_name = "gopi-import"
+  key_name = "gopi-role"
 
   tags = {
     Name = "gopi-DevOps-batch-server"
     env = "Production"
-    owner = "Raman"
+    owner = "Gopi"
   }
   provisioner "local-exec" {
     command = "echo The servers IP address is ${self.public_ip} && echo ${self.public_ip} > /tmp/inv"
