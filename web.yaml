@@ -1,15 +1,15 @@
 ---
 - hosts: all
   tasks:
-    - name: install apache2
+    - name: install httpd
       package:
-        name: apache2
+        name: httpd
         state: installed
     - name: configure
       shell: "echo Hello Lumen guys , raman khanna this side  !! > /var/www/html/index.html"
     - name: start service
       service:
-        name: apache2
+        name: httpd
         state: started
     - name: add user
       user:
